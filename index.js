@@ -3,10 +3,16 @@ const bcrypt = require('bcrypt')
 const MongoClient = require('mongodb').MongoClient
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
+const cors = require('cors')
 const app = express()
 const port = 5000
 
 app.use(express.json())
+app.use(
+  cors({
+    origin: '*',
+  }),
+)
 
 const swaggerOptions = {
   definition: {
