@@ -10,7 +10,9 @@ const port = 5000
 app.use(express.json())
 app.use(
   cors({
-    origin: () => true,
+    origin: ['*', 'http://localhost:3000'],
+    credentials: true, //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
   }),
 )
 
